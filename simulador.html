@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Crédito Accion Social Ejercito</title>
+  <style>
+    body {
+      font-family: Cavolini, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    label, input {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>¿Que es un Simulador?</head>
+<body>Es una herramienta que te ayudará a proyectar cuales serán las cuotas de tu solicitud<body/>
+  <h2>Simulador de Crédito Accion social Ejercito</h2>
+  <p>Tasa de interés fija: <strong>0,85% mensual</strong></p>
+  
+  <label>Monto del préstamo:
+    <input type="number" id="monto" placeholder="Ej: 1000000">
+  </label>
+  
+  <label>Plazo (meses):
+    <input type="number" id="plazo" placeholder="Ej: 12">
+  </label>
+  
+  <button onclick="calcular()">Calcular</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function calcular() {
+      const monto = parseFloat(document.getElementById("monto").value);
+      const plazo = parseInt(document.getElementById("plazo").value);
+      const tasaMensual = 0.0085;
+
+      if (isNaN(monto) || isNaN(plazo)) {
+        document.getElementById("resultado").innerText = "Por favor completa todos los campos.";
+        return;
+      }
+
+      const cuota = (monto * tasaMensual * Math.pow(1 + tasaMensual, plazo)) / 
+                    (Math.pow(1 + tasaMensual, plazo) - 1);
+
+      document.getElementById("resultado").innerText = `Tu cuota mensual sería: $${cuota.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
