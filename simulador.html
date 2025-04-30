@@ -54,11 +54,9 @@ button:hover {
       font-size: 26px;
       color: #2c3e50;
     }
-p { font-family: 'Dancing Script', cursive;
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      background-color: #f4f4f4;
+p { display: block;
+      margin: 10px 0;
+      font-size: 24px;
     }
     
     
@@ -105,8 +103,7 @@ p { font-family: 'Dancing Script', cursive;
       const monto = parseFloat(document.getElementById("monto").value);
       const plazo = parseInt(document.getElementById("plazo").value);
       const tasaMensual = 0.0085;
-      const Seguro= parseFloat (document.getElementById("monto").value);(monto*2,76/1000/plazo);
-      
+            
       
 
       if (isNaN(monto) || isNaN(plazo)) {
@@ -116,6 +113,8 @@ p { font-family: 'Dancing Script', cursive;
 
       const cuota = (monto * tasaMensual * Math.pow(1 + tasaMensual, plazo)) / 
                     (Math.pow(1 + tasaMensual, plazo) - 1);
+      const seguro= (monto*2.76/1000)/plazo;
+      
 
       document.getElementById("resultado").innerText = `Tu cuota mensual sería: $${cuota.toFixed(2)}`;
     }
