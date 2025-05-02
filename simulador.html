@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Simulador de Crédito Accion Social Ejercito</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"cursive>
   <style>
     body {
       font-family: 'Dancing Script', cursive;
@@ -25,7 +25,7 @@
     label, input {
       display: block;
       margin: 10px 0;
-      font-size: 24px;
+      font-size: 28px;
     }
 
     input {
@@ -80,8 +80,8 @@
       }
 
       const cuota = (monto * tasaMensual * Math.pow(1 + tasaMensual, plazo)) / (Math.pow(1 + tasaMensual, plazo) - 1);
-      Seguro único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
-        Total a pagar (sin contar intereses): <strong>$${(monto + seguro).toFixed(2)}</strong>
+      const Seguro= único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
+        Total Giro (sin contar intereses): <strong>$${(monto + seguro).toFixed(2)}</strong>
       `;
       document.getElementById("resultado").innerText = `Tu cuota mensual sería: $${cuota.toFixed(2)}`;
     }
