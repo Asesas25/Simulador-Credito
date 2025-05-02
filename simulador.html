@@ -64,7 +64,7 @@
                               <p><strong>Tasa de interés mensual fija:</strong> 0.85%</p>
   
                             <button onclick="calcular()">Calcular</button>
-                            <button onclick="limpiar()">Limpiar</button>
+                           
 
   <h3 id="resultado"></h3>
 
@@ -73,11 +73,6 @@
       const monto = parseFloat(document.getElementById("monto").value);
       const plazo = parseInt(document.getElementById("plazo").value);
       const tasaMensual = 0.0085; // 0.85%
-    function limpiar() {
-      const monto= parseFloat (document.getElementById("monto").value) = '';
-      const plazo = parseInt(document.getElementById("plazo").value)= '';
-  document.getElementById("resultado").innerText = '';
-}
 
       if (isNaN(monto) || isNaN(plazo)) {
         document.getElementById("resultado").innerText = "Por favor completa todos los campos correctamente.";
