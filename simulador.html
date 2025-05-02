@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Simulador de Crédito Accion Social Ejercito</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"cursive>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Dancing Script', cursive;
       max-width: 600px;
       margin: auto;
       padding: 20px;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 25px;
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: #2c3e50;
+      font-size: 40px;
+      font-style: italic;
       text-align: center;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      text-decoration: underline;
+      color: #2c3e50;
+      margin-bottom: 10px;
     }
 
     label, input {
@@ -36,7 +38,7 @@
     button {
       margin-top: 15px;
       padding: 10px 20px;
-      font-size: 24px;
+      font-size: 28px;
       background-color: #2c3e50;
       color: white;
       border: none;
@@ -64,6 +66,7 @@
   
   
                                  <button onclick="calcular()">Calcular</button>
+                            <button id="limpiar" onclick="limpiar()">Limpiar</button>y
 
   <h3 id="resultado"></h3>
 
@@ -73,17 +76,26 @@
       const plazo = parseInt(document.getElementById("plazo").value);
       const Seguro = parseFloat(document.getElementByid("Seguro".value);
       const tasaMensual = 0.0085; // 0.85%
+      function limpiar() {
+  document.getElementById("monto").value = '';
+  document.getElementById("plazo").value = '';
+  document.getElementById("resultado").innerText = '';
 
       if (isNaN(monto) || isNaN(plazo)) {
         document.getElementById("resultado").innerText = "Por favor completa todos los campos correctamente.";
         return;
       }
 
-      const cuota = (monto * tasaMensual * Math.pow(1 + tasaMensual, plazo)) / (Math.pow(1 + tasaMensual, plazo) - 1);
-      const Seguro= único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
-        Total Giro (sin contar intereses): <strong>$${(monto + seguro).toFixed(2)}</strong>
+       const cuota = (monto * tasaMensual * Math.pow(1 + tasaMensual, plazo)) / (Math.pow(1 + tasaMensual, plazo) - 1);
+      const seguro = (monto * 2.76) / 1000;
+      const totalGiro = monto - seguro;
+
+      document.getElementById("resultado").innerHTML = `
+        <strong>Resultados:</strong><br>
+        Cuota mensual: <strong>$${cuota.toFixed(2)}</strong><br>
+        Seguro único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
+        Total del giro (monto recibido): <strong>$${totalGiro.toFixed(2)}</strong>
       `;
-      document.getElementById("resultado").innerText = `Tu cuota mensual sería: $${cuota.toFixed(2)}`;
     }
   </script>
 </body>
