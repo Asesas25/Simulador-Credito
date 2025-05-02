@@ -116,12 +116,13 @@ p { display: block;
       const seguro= (monto*2.76/1000)/plazo;
       
 
-      document.getElementById("resultado").innerText = `Tu cuota mensual sería: $${cuota.toFixed(2)}`;
-    }
-    Seguro único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
+      document.getElementById("resultado").innerHTML = `
+        <strong>Resultados:</strong><br>
+        Cuota mensual: <strong>$${cuota.toFixed(2)}</strong><br>
+        Seguro único por el crédito: <strong>$${seguro.toFixed(2)}</strong><br>
         Total a pagar (sin contar intereses): <strong>$${(monto + seguro).toFixed(2)}</strong>
       `;
     }
-  </script>
+    </script>
 </body>
 </html>
