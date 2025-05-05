@@ -1,6 +1,6 @@
 # Simulador de Crédito Accion Social Ejercito
 
-Este proyecto es un **simulador de crédito** que permite a los usuarios calcular el valor de las cuotas mensuales de la solcitud segun nuestra tasa de interés y el plazo elegido.
+Este proyecto es un **simulador de crédito** que permite a los usuarios calcular el valor de las cuotas mensuales de la solicitud segun nuestra tasa de interés y el plazo elegido.
 
 ## Características
 
